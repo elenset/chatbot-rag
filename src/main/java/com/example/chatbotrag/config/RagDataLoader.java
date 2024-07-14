@@ -31,7 +31,8 @@ public class RagDataLoader {
                 .toAbsolutePath()+"/"+storeFile;
         File file =new File(fileStore);
         if(!file.exists()){
-            PagePdfDocumentReader pdfDocumentReader= new PagePdfDocumentReader(pdfResource);
+            PagePdfDocumentReader pdfDocumentReader=
+                    new PagePdfDocumentReader(pdfResource);
             List<Document> documents = pdfDocumentReader.get();
             TextSplitter textSplitter= new TokenTextSplitter();
             List<Document> chunks = textSplitter.split(documents);
