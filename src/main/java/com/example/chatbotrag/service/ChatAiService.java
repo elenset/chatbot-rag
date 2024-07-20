@@ -10,6 +10,7 @@ import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import org.springframework.jdbc.core.simple.JdbcClient;
 
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,8 @@ public class ChatAiService {
     @Value("classpath:/prompts/prompt-template.st")
 
     private Resource promoptResource;
+
+
 
     public ChatAiService(ChatClient.Builder builder, VectorStore vectorStore){
         this.chatClient = builder.build();
